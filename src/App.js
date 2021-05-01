@@ -1,19 +1,14 @@
-import { ReviewCard } from './components'
+import { Reviews } from './views'
 import './styles/main.scss'
 
 function App() {
   return (
-    <div 
-    className="App" 
-    style={{ 
-      background: '#E5E5E5', 
-      width: '100%',
-      padding: '40px',
-      }}
+    <div
+      className="App"
     >
       <header className="App-header">
       </header>
-      <ReviewCard />
+      <Reviews />
     </div>
   );
 }
