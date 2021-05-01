@@ -1,3 +1,4 @@
+import {ReviewCard} from './components'
 import './App.scss';
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
+      <ReviewCard />
     </div>
   );
 }
