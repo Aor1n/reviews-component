@@ -6,12 +6,15 @@
 }
 
 @mixin colored-role ($border-color, $text-color) {
+  @include flex (unset, unset, center);
   border: 1px solid $border-color;
   border-radius: 5px;
   font-size: 10px;
   font-weight: 600;
   line-height: 12px;
   color: $text-color;
+  margin-left: 8px;
+  margin-right: 25px;
   padding: 4px 7px;
 }
 

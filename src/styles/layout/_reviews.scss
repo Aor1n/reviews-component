@@ -3,6 +3,7 @@
 
 .reviews {
   @include flex(column, space-between, initial);
+  background-color: $white;
   width: 770px;
   min-height: 304px;
   border-radius: 5px;
@@ -11,60 +12,116 @@
 
   &__header {
     @include flex (row, space-between, normal);
+    &__avatar {
+      @include flex (unset, center, center);
+      background-color: $lighten-gray1;
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+    }
     &__wrapper {
-      display: flex;
-      flex-direction: column;
+      @include flex (column, unset, unset);
+      width: 83%;
       &__top {
-        display: flex;
-        &__name {
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 24px;
-          color: $black;
-        }
-        &__country {
-          @include sm-text ($gray);
-        }
-        &__date {
-          @include sm-text ($lighten-gray);
-        }
-        &__role--green {
-          @include colored-role ($green, $green);
-        }
-        &__role--red {
-          @include colored-role ($red, $red);
+        @include flex (row, space-between, unset);
+        &--info {
+          @include flex (row, space-between, center);
+          &--name {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: $black;
+          }
+          &--country {
+            @include flex (row, center, center);
+            @include sm-text ($gray);
+            &--text {
+              margin-left: 8px;
+              margin-right: 25px;
+            }
+          }
+          &--date {
+            @include sm-text ($lighten-gray);
+          }
+          &--green-role {
+            @include colored-role ($green, $green);
+          }
+          &--red-role {
+            @include colored-role ($red, $red);
+          }
         }
       }
       &__bottom {
         display: flex;
-        &__messages-amount {
-          @include sm-text ($gray);
+        &--messages-amount {
+          @include sm-text ($lighten-gray);
         }
-        &__bull {
+        &--bull {
           height: 3px;
           width: 3px;
+          padding: 0 15px;
           color: $lighten-gray;
         }
-        &__adress {
+        &--adress {
           @include sm-text ($gray);
+          &--link {
+            color: $blue;
+          }
         }
       }
     }
     &__aside {
+      @include flex (row, center, center);
       &__rating {
         font-size: 15px;
         font-weight: 600;
         line-height: 28px;
         color: $black;
+        padding-left: 6px;
+      }
+    }
+  }
+  &__body {
+    &__review {
+      display: flex;
+      &--icon {
+        padding-top: 7px;
+      }
+      &--text {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 28px;
+        color: $gray;
+        padding-left: 13px;
+        padding-right: 30px;
       }
     }
   }
   &__footer {
-    @include flex (row, space-between, normal);
+    @include flex (row, space-between, center);
+    &__button {
+      background-color: $white;
+      height: 40px;
+      width: 129px;
+      border: 1px inset $blue;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      color: $blue;
+    }
     &__wrapper {
       @include flex (row, space-between, normal);
       &__interaction-button {
-        @include flex (row, space-between, normal)
+        @include flex (row, space-between, normal);
+        &--number {
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 22px;
+          color: $lighten-gray;
+          padding: 0 10px;
+
+        }
       }
     }
   }

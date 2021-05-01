@@ -6,21 +6,19 @@
   'abstracts/functions',
   'abstracts/mixins';
 
-
-// 3. Base stuff
+// 2. Base stuff
 @import
   'base/reset',
   'base/typography';
 
-// 4. Layout-related sections
+// 3. Layout-related sections
 @import
   'layout/reviews',
+  // 'layout/reviews/header',
+  // 'layout/reviews/body',
+  // 'layout/reviews/footer',
   'layout/sidebar';
 
-// 5. Components
+// 4. Components
 @import
   'components/buttons';
-
-// 7. Themes
-// @import
-//   'themes/default';
