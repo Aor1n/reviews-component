@@ -1,2 +1,19 @@
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
+@import '../../abstracts/variables';
+@import '../../abstracts/mixins';
+
+.reviews__footer {
+  @include flex (row, space-between, center);
+  &__wrapper {
+    @include flex (row, space-between, normal);
+    &__interaction-button {
+      @include flex (row, space-between, normal);
+      &--number {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        color: $lighten-gray;
+        padding: 0 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.default-avatar {
+  @include flex (unset, center, center);
+  background-color: $lighten-gray1;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
