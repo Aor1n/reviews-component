@@ -1,0 +1,26 @@
+@import '../../abstracts/variables';
+@import '../../abstracts/mixins';
+.App {
+  @include flex (column, unset, center); 
+  height: 100vh;
+  background: #E5E5E5;
+  padding-top: 30px;
+  .outer-wrapper {
+    width: 770px;
+    .reviews {
+      @include flex(column, space-between, unset);
+      background-color: $white;
+      width: 100%;
+      min-height: 304px;
+      border-radius: 5px;
+      box-shadow: 0px 6px 29px rgba(15, 16, 17, 0.05);
+      padding: 27px 30px;
+      &--heading {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        padding: 27px 0;
+      }
+    }
+  }
+}
