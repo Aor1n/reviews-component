@@ -1,24 +1,27 @@
 @charset "UTF-8";
 
-// 1. Configuration and helpers
+html {
+  font-family: 'Montserrat' !important;
+}
+
+// 1. Base stuff
+@import 'base/reset';
+
+// 2. Configuration and helpers
 @import
   'abstracts/variables',
   'abstracts/functions',
   'abstracts/mixins';
 
-// 2. Base stuff
-@import
-  'base/reset',
-  'base/typography';
-
 // 3. Layout-related sections
 @import
   'layout/reviews',
-  // 'layout/reviews/header',
-  // 'layout/reviews/body',
-  // 'layout/reviews/footer',
+  'layout/reviews/header',
+  'layout/reviews/body',
+  'layout/reviews/footer',
   'layout/sidebar';
 
 // 4. Components
 @import
+  'components/avatars',
   'components/buttons';

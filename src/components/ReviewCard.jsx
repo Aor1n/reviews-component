@@ -14,7 +14,7 @@ export const ReviewCard = () => {
   return (
     <div className="reviews" style={{ margin: 'auto' }}>
       <header className="reviews__header">
-        <span className="reviews__header__avatar">
+        <span className="default-avatar">
           <DefaultUserIcon />
         </span>
 
@@ -76,7 +76,7 @@ export const ReviewCard = () => {
       </div>
 
       <footer className="reviews__footer">
-        <button className="reviews__footer__button" type="button">Ответить</button>
+        <button className="default-button" type="button">Ответить</button>
         <div className="reviews__footer__wrapper">
           <div className="reviews__footer__wrapper__interaction-button">
             <LikeIcon alt="asd" />
