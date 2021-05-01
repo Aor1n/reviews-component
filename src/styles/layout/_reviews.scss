@@ -1,0 +1,71 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.reviews {
+  @include flex(column, space-between, initial);
+  width: 770px;
+  min-height: 304px;
+  border-radius: 5px;
+  box-shadow: 0px 6px 29px rgba(15, 16, 17, 0.05);
+  padding: 27px 30px;
+
+  &__header {
+    @include flex (row, space-between, normal);
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      &__top {
+        display: flex;
+        &__name {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          color: $black;
+        }
+        &__country {
+          @include sm-text ($gray);
+        }
+        &__date {
+          @include sm-text ($lighten-gray);
+        }
+        &__role--green {
+          @include colored-role ($green, $green);
+        }
+        &__role--red {
+          @include colored-role ($red, $red);
+        }
+      }
+      &__bottom {
+        display: flex;
+        &__messages-amount {
+          @include sm-text ($gray);
+        }
+        &__bull {
+          height: 3px;
+          width: 3px;
+          color: $lighten-gray;
+        }
+        &__adress {
+          @include sm-text ($gray);
+        }
+      }
+    }
+    &__aside {
+      &__rating {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 28px;
+        color: $black;
+      }
+    }
+  }
+  &__footer {
+    @include flex (row, space-between, normal);
+    &__wrapper {
+      @include flex (row, space-between, normal);
+      &__interaction-button {
+        @include flex (row, space-between, normal)
+      }
+    }
+  }
+}
