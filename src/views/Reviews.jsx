@@ -1,10 +1,10 @@
-import { ReviewCard, ReviewTotals } from '../components';
+import { Card, Totals } from '../components';
 
 export const Reviews = () => {
   return (
     <>
-      <ReviewCard />
-      <ReviewTotals />
+      <Card />
+      <Totals />
     </>
   );
 };

@@ -1,3 +1,4 @@
+// positioning
 @mixin flex ($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -5,29 +6,50 @@
   align-items: $align;
 }
 
+// text
+@mixin font-params ($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin heading-text ($padding) {
+  @include font-params (20px, 500, 32px);
+  padding: $padding;
+}
+
+@mixin normal-text ($text-color) {
+  @include font-params (15px, 400, 28px);
+  color: $text-color;
+}
+
+@mixin sm-text ($text-color) {
+  @include font-params (14px, 400, 22px);
+  color: $text-color;
+}
+
+
+//others
 @mixin colored-role ($border-color, $text-color) {
   @include flex (unset, unset, center);
+  @include font-params (10px, 600, 12px);
   border: 1px solid $border-color;
   border-radius: 5px;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 12px;
   color: $text-color;
   margin-left: 8px;
   margin-right: 25px;
   padding: 4px 7px;
 }
 
-@mixin sm-text ($text-color) {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  color: $text-color;
-}
-
-@mixin normal-text ($text-color) {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 28px;
-  color: $text-color;
+@mixin progress-bar ($color, $progress) {
+  height: 6px;
+  width: 246px;
+  background-color: $lighten-blue;
+  border-radius: 5px;
+  div {
+    height: 5px;
+    width: $progress;
+    background-color: $color;
+    border-radius: 5px;
+  }
 }

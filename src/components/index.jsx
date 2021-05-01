@@ -1,2 +1,1 @@
-export * from './ReviewCard';
-export * from './ReviewTotals';
+export * from './review/index';

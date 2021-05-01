@@ -8,9 +8,7 @@
     &__interaction-button {
       @include flex (row, space-between, normal);
       &--number {
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 22px;
+        @include font-params (14px, 600, 22px);
         color: $lighten-gray;
         padding: 0 10px;
       }
