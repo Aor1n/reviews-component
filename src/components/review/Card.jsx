@@ -7,10 +7,10 @@ import {
   DislikeIcon,
   PositiveSideIcon,
   NegativeSideIcon
-} from './icons';
-import '../styles/main.scss';
+} from '../icons';
+import '../../styles/main.scss';
 
-export const ReviewCard = () => {
+export const Card = () => {
   return (
     <div className="outer-wrapper">
       <h3 className="reviews--heading">Отзывы о компании ООО “Ковалевский”</h3>
@@ -21,10 +21,8 @@ export const ReviewCard = () => {
           </span>
 
           <div className="reviews__header__wrapper">
-
             <div className="reviews__header__wrapper__top">
               <div className="reviews__header__wrapper__top--info">
-
                 <span className="reviews__header__wrapper__top--info--name">Александр</span>
                 <span className="reviews__header__wrapper__top--info--green-role">Опытный</span>
                 <span className="reviews__header__wrapper__top--info--country">
@@ -37,7 +35,12 @@ export const ReviewCard = () => {
               </div>
 
               <div className="reviews__header__aside">
-                <StarIcon />
+                <StarIcon 
+                  width="16.5" 
+                  height="15.75"
+                  viewBoxWidth="16.5"
+                  viewBoxHeight="15.75"
+                />
                 <span className="reviews__header__aside__rating">4.8</span>
               </div>
             </div>

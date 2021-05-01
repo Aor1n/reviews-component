@@ -8,9 +8,7 @@
       padding-top: 7px;
     }
     &--text {
-      font-size: 15px;
-      font-weight: normal;
-      line-height: 28px;
+      @include font-params (15px, 500, 28px);
       color: $gray;
       padding-left: 13px;
       padding-right: 30px;
