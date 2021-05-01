@@ -10,12 +10,11 @@ html {
 // 2. Configuration and helpers
 @import
   'abstracts/variables',
-  'abstracts/functions',
   'abstracts/mixins';
 
 // 3. Layout-related sections
 @import
-  'layout/reviews',
+  'layout/reviews/index',
   'layout/reviews/header',
   'layout/reviews/body',
   'layout/reviews/footer',
