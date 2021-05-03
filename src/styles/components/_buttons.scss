@@ -7,3 +7,13 @@
   border-radius: 40px;
   color: $blue;
 }
+
+@media screen and (max-width: 780px) {
+  .default-button {
+    @include font-params (14px, 600, 24px);
+    height: initial;
+    width: initial;
+    border: none;
+    padding: 0;
+  }
+}

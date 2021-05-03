@@ -1,7 +1,7 @@
+import { Rating } from './Rating';
 import {
   DefaultUserIcon,
   FlagUAIcon,
-  StarIcon,
   DotsIcon,
   LikeIcon,
   DislikeIcon,
@@ -12,13 +12,18 @@ import '../../styles/main.scss';
 
 export const Card = () => {
   return (
-    <div className="outer-wrapper">
+    <div>
       <h3 className="reviews--heading">Отзывы о компании ООО “Ковалевский”</h3>
       <div className="reviews">
         <header className="reviews__header">
-          <span className="default-avatar">
-            <DefaultUserIcon />
-          </span>
+          <div className="reviews__header__adaptive">
+            <span className="default-avatar">
+              <DefaultUserIcon />
+            </span>
+            <div className="reviews__header__aside__adaptive__mobile">
+              <Rating currentRate="4.8" />
+            </div>
+          </div>
 
           <div className="reviews__header__wrapper">
             <div className="reviews__header__wrapper__top">
@@ -35,50 +40,54 @@ export const Card = () => {
               </div>
 
               <div className="reviews__header__aside">
-                <StarIcon 
-                  width="16.5" 
-                  height="15.75"
-                  viewBoxWidth="16.5"
-                  viewBoxHeight="15.75"
-                />
-                <span className="reviews__header__aside__rating">4.8</span>
+                <Rating currentRate="4.8" />
               </div>
             </div>
             <div className="reviews__header__wrapper__bottom">
               <span className="reviews__header__wrapper__bottom--messages-amount">235 сообщений</span>
               <span className="reviews__header__wrapper__bottom--bull">&bull;</span>
-              <span className="reviews__header__wrapper__bottom--adress">
-                Музыкальный магазин “Super Sound”, Москва,...
-              <a
-                  className="reviews__header__wrapper__bottom--adress--link"
-                  href="http://localhost:3000/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >Перейти</a>
-              </span>
+      
+              <div className="reviews__header__wrapper__bottom--adress">
+                Музыкальный магазин
+                <div className="reviews__header__wrapper__bottom--adress__adaptive"> 
+                  <div className="reviews__header__wrapper__bottom--adress__adaptive__mobile">
+                    &nbsp;“Super Sound”, Москва...
+                  </div>
+                  <a
+                    className="reviews__header__wrapper__bottom--link"
+                    href="http://localhost:3000/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >Перейти</a>
+                </div>
+              </div>
             </div>
           </div>
-          <DotsIcon />
+          <span className="reviews--dots">
+            <DotsIcon />
+          </span>
         </header>
 
-        <div className="reviews__body">
+        <main className="reviews__body">
           <div className="reviews__body__review">
             <div className="reviews__body__review--icon">
               <PositiveSideIcon />
+              <label className="reviews__body__review--icon--label">Достоинства</label>
             </div>
             <div className="reviews__body__review--text">
               Предназначен для опытных инвесторов они смогут совершать сделки на бирже и видеть всю информацию о торгах сразу на нескольких экранах, в любом браузере и на любом количестве устройств. Предназначен для опытных инвесторов.
-          </div>
+            </div>
           </div>
           <div className="reviews__body__review">
             <div className="reviews__body__review--icon">
               <NegativeSideIcon />
+              <label className="reviews__body__review--icon--label">Недостатки</label>
             </div>
             <div className="reviews__body__review--text">
               Предназначен для опытных инвесторов.
+            </div>
           </div>
-          </div>
-        </div>
+        </main>
 
         <footer className="reviews__footer">
           <button className="default-button" type="button">Ответить</button>
