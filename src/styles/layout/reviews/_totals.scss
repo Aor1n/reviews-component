@@ -3,37 +3,108 @@
 
 .reviews__totals-card {
   @include flex (column, space-between, center);
+  @include box-shadow;
   height: 450px;
   width: 370px;
   background-color: $white;
   padding-top: 30px;
   padding-bottom: 45px;
+  &__adaptive {
+    @include flex (column, space-evenly, center);
+    height: 100%;
+  }
+  &__group {
+    @include flex (column, space-between, center);
+    height: 158px;
+    &--rating {
+      @include flex (row, center, baseline);
+      font-size: 20px;
+      font-weight: 400;
+      &--current {
+        @include font-params (50px, 500, 52px);
+        color: $black;
+      }
+    }
+    &--reviews-amount {
+      @include font-params (13px, 400, 22px);
+      color: $lighten-gray;
+    }
+  }
   &--heading {
     @include heading-text (0);
   }
-  &--rating {
-    @include flex (row, center, baseline);
-    font-size: 24px;
-    font-weight: 400;
-    &--current {
-      @include font-params (50px, 500, 52px);
+  &__scales {
+    @include flex (column, space-between, unset);
+    height: 155px;
+    label {
+      @include font-params (14px, 400, 22px);
       color: $black;
     }
+    &--progress-bar-wrapper {
+      @include flex (row, unset, center);
+    }
+    &--progress-bar1 {
+      @include progress-bar ($green, 89%);
+    }
+    &--progress-bar2 {
+      @include progress-bar ($orange, 56%);
+    }
+    &--progress-bar3 {
+      @include progress-bar ($red, 20%);
+    }
+    &--value {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
   }
-  &--reviews-amount {
-    @include font-params (13px, 400, 22px);
-    color: $lighten-gray;
+}
+
+@media screen and (max-width: 1280px) {
+  .reviews__totals-card {
+    height: 270px;
+    width: $tablet-card-width;
+    margin-bottom: 40px;
+    &__adaptive {
+      @include flex (row-reverse, space-between, center);
+      height: 100%;
+      width: 100%;
+      padding: 30px;
+    }
+    &__group {
+      @include flex (column, space-between, unset);
+      text-align: center;
+      padding-right: 78.5px;
+    }
+    &--heading {
+      width: 90%;
+    }
+    &__scales {
+      padding-left: 34px;
+    }
   }
-  &--progress-bar-wrapper {
-    @include flex (row, space-between, center);
-  }
-  &--progress-bar1 {
-    @include progress-bar ($green, 89%);
-  }
-  &--progress-bar2 {
-    @include progress-bar ($orange, 56%);
-  }
-  &--progress-bar3 {
-    @include progress-bar ($red, 20%);
+}
+
+@media screen and (max-width: 760px) {
+  .reviews__totals-card {
+    height: 360px;
+    width: 100%;
+    margin-bottom: 30px;
+    &__adaptive {
+      @include flex (column, space-between, center);
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+    }
+    &__group {
+      @include flex (column, space-between, unset);
+      padding-right: 0;
+    }
+    &--heading {
+      width: initial;
+    }
+    &__scales {
+      padding-left: 0;
+    }
   }
 }

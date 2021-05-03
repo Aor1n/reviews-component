@@ -6,3 +6,5 @@ export * from './LikeIcon';
 export * from './DislikeIcon';
 export * from './PositiveSideIcon';
 export * from './NegativeSideIcon';
+export * from './StarBiggerIcon';
+export * from './StarBiggerHalfIcon';

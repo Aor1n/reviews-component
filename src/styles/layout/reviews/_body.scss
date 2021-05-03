@@ -6,6 +6,9 @@
     display: flex;
     &--icon {
       padding-top: 7px;
+      &--label {
+        display: none;
+      }
     }
     &--text {
       @include font-params (15px, 500, 28px);
@@ -14,4 +17,28 @@
       padding-right: 30px;
     }
   }
+}
+
+@media screen and (max-width: 780px) {
+  .reviews__body {
+    &__review {
+      flex-direction: column;
+      &--icon {
+        @include flex (row, initial, center);
+        padding-top: 7px;
+        &--label {
+          @include font-params (14px, 600, 22px);
+          display: inline;
+          color: $black;
+          padding: 5px 0 6.67px 6.67px;
+        }
+      }
+      &--text {
+        @include font-params (14px, 400, 24px);
+        color: $gray;
+        padding: 0;
+      }
+    }
+  }
+  
 }
