@@ -18,8 +18,7 @@
     height: 158px;
     &--rating {
       @include flex (row, center, baseline);
-      font-size: 20px;
-      font-weight: 400;
+      @include font-params (20px, 400, 52px);
       &--current {
         @include font-params (50px, 500, 52px);
         color: $black;
@@ -99,8 +98,18 @@
     &__group {
       @include flex (column, space-between, unset);
       padding-right: 0;
+      &--rating {
+        @include font-params (20px, 400, 1);
+        &--current {
+          @include font-params (40px, 500, 1);
+          color: $black;
+          margin-top: 10px;
+          padding-top: 15px;
+        }
+      }
     }
     &--heading {
+      @include font-params (16px, 500, 24px);
       width: initial;
     }
     &__scales {

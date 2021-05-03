@@ -2,9 +2,9 @@
 @import '../../abstracts/mixins';
 
 .App {
-  @include flex (row, space-evenly, unset); 
-  height: 100vh;
-  background: #E5E5E5;
+  @include flex (column, space-evenly, center); 
+  height: 100%;
+  background: $general-bg;
   padding-top: 30px;
   .reviews {
     @include flex(column, space-between, unset);
@@ -12,12 +12,17 @@
     background-color: $white;
     width: 770px;
     min-height: 304px;
+    margin-bottom: 10px;
     padding: 27px 30px;
     &--heading {
       @include heading-text (0 0 27px 0);
+      color: $black;
     }
     &--dots {
       padding-top: 3px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -38,9 +43,11 @@
     .reviews {
       width: 90%;
       margin: auto;
+      margin-bottom: 10px;
       padding: 24px 20px;
       &--heading {
         @include heading-text (0 0 17px 0);
+        @include font-params (16px, 500, 24px);
         width: 90%;
         margin: auto;
       }

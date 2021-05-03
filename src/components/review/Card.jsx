@@ -1,4 +1,5 @@
 import { Rating } from './Rating';
+import { Button } from '../buttons';
 import {
   DefaultUserIcon,
   FlagUAIcon,
@@ -10,10 +11,25 @@ import {
 } from '../icons';
 import '../../styles/main.scss';
 
-export const Card = () => {
+export const Card = (props) => {
+  const {
+    currentRate,
+    username,
+    role,
+    country,
+    date,
+    messagesAmount,
+    adress,
+    pluses,
+    minuses,
+    likesAmount,
+    dislikesAmount,
+    isLike,
+    isDislike
+  } = props;
+
   return (
     <div>
-      <h3 className="reviews--heading">Отзывы о компании ООО “Ковалевский”</h3>
       <div className="reviews">
         <header className="reviews__header">
           <div className="reviews__header__adaptive">
@@ -21,22 +37,22 @@ export const Card = () => {
               <DefaultUserIcon />
             </span>
             <div className="reviews__header__aside__adaptive__mobile">
-              <Rating currentRate="4.8" />
+              <Rating currentRate={currentRate} />
             </div>
           </div>
 
           <div className="reviews__header__wrapper">
             <div className="reviews__header__wrapper__top">
               <div className="reviews__header__wrapper__top--info">
-                <span className="reviews__header__wrapper__top--info--name">Александр</span>
-                <span className="reviews__header__wrapper__top--info--green-role">Опытный</span>
+                <span className="reviews__header__wrapper__top--info--name">{username}</span>
+                <span className={`reviews__header__wrapper__top--info--${role ? 'green' : 'red'}-role`}>{role ? 'Опытный' : 'Заблокирован'}</span>
                 <span className="reviews__header__wrapper__top--info--country">
                   <FlagUAIcon />
                   <span className="reviews__header__wrapper__top--info--country--text">
-                    Украина
+                    {country}
+                  </span>
                 </span>
-                </span>
-                <span className="reviews__header__wrapper__top--info--date">23.02.2019 в 15:06</span>
+                <span className="reviews__header__wrapper__top--info--date">{date}</span>
               </div>
 
               <div className="reviews__header__aside">
@@ -44,14 +60,14 @@ export const Card = () => {
               </div>
             </div>
             <div className="reviews__header__wrapper__bottom">
-              <span className="reviews__header__wrapper__bottom--messages-amount">235 сообщений</span>
+              <span className="reviews__header__wrapper__bottom--messages-amount">{messagesAmount} сообщений</span>
               <span className="reviews__header__wrapper__bottom--bull">&bull;</span>
-      
+
               <div className="reviews__header__wrapper__bottom--adress">
-                Музыкальный магазин
-                <div className="reviews__header__wrapper__bottom--adress__adaptive"> 
+                Музыкальный магазин&nbsp;
+                <div className="reviews__header__wrapper__bottom--adress__adaptive">
                   <div className="reviews__header__wrapper__bottom--adress__adaptive__mobile">
-                    &nbsp;“Super Sound”, Москва...
+                    “Super Sound”, {adress}
                   </div>
                   <a
                     className="reviews__header__wrapper__bottom--link"
@@ -75,7 +91,7 @@ export const Card = () => {
               <label className="reviews__body__review--icon--label">Достоинства</label>
             </div>
             <div className="reviews__body__review--text">
-              Предназначен для опытных инвесторов они смогут совершать сделки на бирже и видеть всю информацию о торгах сразу на нескольких экранах, в любом браузере и на любом количестве устройств. Предназначен для опытных инвесторов.
+              {pluses}
             </div>
           </div>
           <div className="reviews__body__review">
@@ -84,21 +100,21 @@ export const Card = () => {
               <label className="reviews__body__review--icon--label">Недостатки</label>
             </div>
             <div className="reviews__body__review--text">
-              Предназначен для опытных инвесторов.
+              {minuses}
             </div>
           </div>
         </main>
 
         <footer className="reviews__footer">
-          <button className="default-button" type="button">Ответить</button>
+          <Button title="Ответить" />
           <div className="reviews__footer__wrapper">
             <div className="reviews__footer__wrapper__interaction-button">
-              <LikeIcon alt="asd" />
-              <span className="reviews__footer__wrapper__interaction-button--number">23</span>
+              <LikeIcon isLike={isLike ? '#219653' : '#87919C'} />
+              <span className="reviews__footer__wrapper__interaction-button--number">{likesAmount}</span>
             </div>
             <div className="reviews__footer__wrapper__interaction-button">
-              <DislikeIcon />
-              <span className="reviews__footer__wrapper__interaction-button--number">10</span>
+              <DislikeIcon isDislike={isDislike ? '#EB5757' : '#87919C'} />
+              <span className="reviews__footer__wrapper__interaction-button--number">{dislikesAmount}</span>
             </div>
           </div>
         </footer>
