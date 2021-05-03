@@ -5,3 +5,10 @@
   width: 48px;
   border-radius: 50%;
 }
+
+@media screen and (max-width: 780px) {
+  .default-avatar {
+    height: 40px;
+    width: 40px;
+  }
+}

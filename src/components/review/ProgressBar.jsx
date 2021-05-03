@@ -4,18 +4,18 @@ export const ProgressBar = (props) => {
   const {title, currentNumber, currentProgress} = props;
 
   return (
-    <>
-      <span>
-          {title}
-        </span>
-        <div className="reviews__totals-card--progress-bar-wrapper">
-          <div className={currentProgress}>
-            <div />
-          </div>
-          <span>
-            {currentNumber}
-          </span>
+    <div>
+      <label>
+        {title}
+      </label>
+      <div className="reviews__totals-card__scales--progress-bar-wrapper">
+        <div className={currentProgress}>
+          <div />
         </div>
-    </>
+        <span className="reviews__totals-card__scales--value">
+          {currentNumber}
+        </span>
+      </div>
+    </div>
   );
 };

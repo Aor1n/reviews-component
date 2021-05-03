@@ -15,3 +15,18 @@
     }
   }
 }
+
+@media screen and (max-width: 780px) {
+  .reviews__footer {
+    padding-top: 8px;
+    &__wrapper {
+      @include flex (row, space-between, normal);
+      &__interaction-button {
+        @include flex (row, space-between, normal);
+        &--number {
+          padding: 0 15px 0 6px;
+        }
+      }
+    }
+  }
+}
