@@ -5,7 +5,7 @@
   @include flex (row, space-between, normal);
   &__wrapper {
     @include flex (column, unset, unset);
-    width: 83%;
+    width: 85%;
     &__top {
       @include flex (row, space-between, unset);
       &--info {
@@ -35,12 +35,11 @@
     }
     &__bottom {
       display: flex;
+      align-items: center;
       &--messages-amount {
         @include sm-text ($lighten-gray);
       }
       &--bull {
-        height: 3px;
-        width: 3px;
         padding: 0 15px;
         color: $lighten-gray;
       }
@@ -99,12 +98,10 @@
           line-height: 24px;
         }
         &--green-role {
-          margin-left: 0;
-          margin-right: 5px;
+          margin: auto;
         }
         &--red-role {
-          margin-left: 0;
-          margin-right: 5px;
+          margin: auto;
         }
       }
       &__bottom {

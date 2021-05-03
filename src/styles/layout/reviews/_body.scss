@@ -11,7 +11,7 @@
       }
     }
     &--text {
-      @include font-params (15px, 500, 28px);
+      @include font-params (15px, 400, 28px);
       color: $gray;
       padding-left: 13px;
       padding-right: 30px;

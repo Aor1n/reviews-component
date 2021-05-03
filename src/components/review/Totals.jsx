@@ -2,7 +2,8 @@ import { ProgressBar } from './ProgressBar';
 import { StarBiggerIcon, StarBiggerHalfIcon } from '../icons';
 import '../../styles/main.scss';
 
-export const Totals = () => {
+export const Totals = (props) => {
+  const {header, averageRating, reviewsAmount} = props;
   const stars = (
     [1, 2, 3, 4].map((i) => {
       return (
@@ -11,22 +12,22 @@ export const Totals = () => {
         />
       )
     })
-  )
+  );
 
   return (
     <aside className="reviews__totals-card">
-      <h3 className="reviews__totals-card--heading">Общий рейтинг компании</h3>
+      <h3 className="reviews__totals-card--heading">{header}</h3>
       <div className="reviews__totals-card__adaptive">
         <div className="reviews__totals-card__group">
           <div className="reviews__totals-card__group--rating">
-            <span className="reviews__totals-card__group--rating--current">4.8</span>&nbsp; / 5
+            <span className="reviews__totals-card__group--rating--current">{averageRating}</span>&nbsp; / 5
           </div>
           <div>
             {stars}<StarBiggerHalfIcon />
             {/* TODO decrease star size for mobiles */}
           </div>
           <div className="reviews__totals-card__group--reviews-amount">
-            6 отзывов
+            {reviewsAmount} отзывов
           </div>
         </div>
 
